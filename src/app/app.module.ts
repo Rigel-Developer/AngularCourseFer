@@ -7,15 +7,15 @@ import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import { RouterModule,Routes } from '@angular/router';
-
+import {HeroesService} from './service/heroes.service'
 
 const appRoutes:Routes =[
-  {path:'**',pathMatch:'full',redirectTo:'home'},
+  {path:'',pathMatch:'full',redirectTo:'/home'},
  
   {path:'home',component:HomeComponent},
   {path:'about',component:AboutComponent},
   {path:'heroes',component:HeroesComponent}
-]
+];
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ const appRoutes:Routes =[
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
