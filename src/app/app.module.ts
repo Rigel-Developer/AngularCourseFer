@@ -7,14 +7,16 @@ import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import { RouterModule,Routes } from '@angular/router';
-import {HeroesService} from './service/heroes.service'
+import {HeroesService} from './service/heroes.service';
+import { HeroeComponent } from './component/heroe/heroe.component'
 
 const appRoutes:Routes =[
   {path:'',pathMatch:'full',redirectTo:'/home'},
  
   {path:'home',component:HomeComponent},
   {path:'about',component:AboutComponent},
-  {path:'heroes',component:HeroesComponent}
+  {path:'heroes',component:HeroesComponent},
+  {path:'heroe/:id',component:HeroeComponent}
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const appRoutes:Routes =[
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,
